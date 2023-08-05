@@ -1,0 +1,73 @@
+name: final_project
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.0.5 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  animated_splash_screen: ^1.3.0
+  page_view_dot_indicator: ^2.1.0
+  firebase_core: ^2.15.0
+  firebase_auth: ^4.7.1
+  cloud_firestore: ^4.8.3
+  carousel_slider: ^4.2.1
+  google_fonts: ^5.1.0
+  shared_preferences: ^2.2.0
+  fluttertoast: ^8.2.2
+  flutter_rating_bar: ^4.0.1
+  
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    
+    - assets/easy.jpg
+    - assets/money.jpg
+    - assets/crowdfree.jpg
+
+    - assets/home1.jpg
+    - assets/home2.jpg
+    - assets/home3.jpg
+    - assets/home4.jpg
+    
+    - assets/Fwt.jpg
+    - assets/Swt.jpg
+    - assets/wt3.jpg
+    - assets/wt4.jpg
+    - assets/wt5.jpg
+    - assets/wt6.jpg
+
+    - assets/bag.jpg
+    - assets/bag2.jpg
+    - assets/bag3.jpg
+    - assets/bag4.jpg
+    - assets/bag5.jpg
+    - assets/bag6.jpg
+
+    - assets/t1.jpg
+    - assets/t2.jpg
+    - assets/t3.jpg
+    - assets/t4.jpg
+
+    - assets/c1.jpg
+    - assets/c2.jpg
+    - assets/c3.jpg
+    - assets/c4.jpg
+    - assets/c5.jpg
+    - assets/c6.jpg
+   
+
+
+
+    
+
