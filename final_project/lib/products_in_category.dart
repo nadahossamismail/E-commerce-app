@@ -1,10 +1,12 @@
 import 'package:final_project/Categories.dart';
 import 'package:flutter/material.dart';
-import 'package:final_project/displayProducts.dart';
+import 'package:final_project/display_products.dart';
 import 'package:final_project/userModel.dart';
 import 'package:final_project/firebase.dart';
 
 class Products extends StatefulWidget {
+  const Products({super.key});
+
   @override
   State<Products> createState() => _ProductsState();
 }
@@ -12,9 +14,18 @@ class Products extends StatefulWidget {
 class _ProductsState extends State<Products> {
   bool isLoading = true;
   late userModel? u;
+  var women = [
+    {"image": "assets/c1.jpg", "name": "Top 240", "price": "\$105"},
+    {"image": "assets/c2.jpg", "name": "Dress 056", "price": "\$427"},
+    {"image": "assets/c3.jpg", "name": "Dress 010", "price": "\$280"},
+    {"image": "assets/c4.jpg", "name": "Dress 308", "price": "\$530"},
+    {"image": "assets/c5.jpg", "name": "Top 231", "price": "\$190"},
+    {"image": "assets/c6.jpg", "name": "Dress 845", "price": "\$352"}
+  ];
 
   @override
   void initState() {
+    firebase("Women").writeProducts(women);
     get();
     super.initState();
   }
@@ -40,7 +51,7 @@ class _ProductsState extends State<Products> {
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : SingleChildScrollView(child: displayProducts(u?.proList)),
+          : SingleChildScrollView(child: DisplayProducts(u?.proList)),
     );
   }
 }

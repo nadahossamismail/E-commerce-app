@@ -127,6 +127,7 @@ class _SignUpState extends State<SignUp> {
                             pass.clear();
                             email.clear();
                             username.clear();
+
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
                                     builder: (_) => mainScreen()));

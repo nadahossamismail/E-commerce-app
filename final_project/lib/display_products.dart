@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class displayProducts extends StatelessWidget {
-  List? productList;
-  displayProducts(this.productList, {super.key});
+class DisplayProducts extends StatelessWidget {
+  final List? productList;
+  const DisplayProducts(this.productList, {super.key});
   @override
   Widget build(BuildContext context) {
     return display(productList);

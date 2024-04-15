@@ -24,10 +24,10 @@
   // ];
 
   // var women = [
-  //   {"image": "assets/c1.jpg", "name": "Bag 240", "price": "\$105"},
-  //   {"image": "assets/c2.jpg", "name": "Bag 056", "price": "\$427"},
-  //   {"image": "assets/c3.jpg", "name": "Bag 010", "price": "\$280"},
-  //   {"image": "assets/c4.jpg", "name": "Bag 308", "price": "\$530"},
-  //   {"image": "assets/c5.jpg", "name": "Bag 231", "price": "\$190"},
-  //   {"image": "assets/c6.jpg", "name": "Bag 845", "price": "\$352"}
+  //   {"image": "assets/c1.jpg", "name": "Top 240", "price": "\$105"},
+  //   {"image": "assets/c2.jpg", "name": "Dress 056", "price": "\$427"},
+  //   {"image": "assets/c3.jpg", "name": "Dress 010", "price": "\$280"},
+  //   {"image": "assets/c4.jpg", "name": "Dress 308", "price": "\$530"},
+  //   {"image": "assets/c5.jpg", "name": "Top 231", "price": "\$190"},
+  //   {"image": "assets/c6.jpg", "name": "Dress 845", "price": "\$352"}
   // ];

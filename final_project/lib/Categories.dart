@@ -1,10 +1,12 @@
-import 'package:final_project/ProductsInCat.dart';
+import 'package:final_project/products_in_category.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 var categoryName;
 
 class Categories extends StatefulWidget {
+  const Categories({super.key});
+
   getcat() {
     return categoryName;
   }
@@ -45,7 +47,7 @@ class _CategoriesState extends State<Categories> {
       onTap: () {
         categoryName = name;
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (_) => Products()));
+            .push(MaterialPageRoute(builder: (_) => const Products()));
       },
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(45))),

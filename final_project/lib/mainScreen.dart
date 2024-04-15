@@ -15,7 +15,7 @@ class mainScreen extends StatefulWidget {
 class _mainScreenState extends State<mainScreen> {
   var currentTab = 0;
   bool notification = true;
-  var pages = [homeScreen(), Categories(), Account()];
+  var pages = [HomeScreen(), Categories(), Account()];
   var pageTitle = ["FOR YOU", "Categories", "Account"];
 
   @override

@@ -121,12 +121,12 @@ class _loginScreenState extends State<loginScreen> {
                           "firstLetter", email.text[0].toUpperCase());
                       Navigator.of(context).pushReplacement(
                           MaterialPageRoute(builder: (_) => mainScreen()));
-                    }).catchError((_) {
+                    }).catchError((e) {
                       var s = AlertDialog(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(40)),
                         title: const Text(
-                          "This account doesn't exits",
+                          "This account doesn't exist",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               fontSize: 20, fontWeight: FontWeight.bold),
