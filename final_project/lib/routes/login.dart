@@ -1,18 +1,20 @@
-import 'package:final_project/SignUp.dart';
-import 'package:final_project/mainScreen.dart';
+import 'package:final_project/routes/sign_up.dart';
+import 'package:final_project/widgets/main_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class loginScreen extends StatefulWidget {
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   State<StatefulWidget> createState() {
-    return _loginScreenState();
+    return _LoginScreenState();
   }
 }
 
-class _loginScreenState extends State<loginScreen> {
+class _LoginScreenState extends State<LoginScreen> {
   bool visible = true;
   TextEditingController email = TextEditingController();
   TextEditingController pass = TextEditingController();
@@ -120,7 +122,7 @@ class _loginScreenState extends State<loginScreen> {
                       await pref.setString(
                           "firstLetter", email.text[0].toUpperCase());
                       Navigator.of(context).pushReplacement(
-                          MaterialPageRoute(builder: (_) => mainScreen()));
+                          MaterialPageRoute(builder: (_) => MainScreen()));
                     }).catchError((e) {
                       var s = AlertDialog(
                         shape: RoundedRectangleBorder(

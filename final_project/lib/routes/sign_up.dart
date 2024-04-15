@@ -1,5 +1,5 @@
-import 'package:final_project/mainScreen.dart';
-import 'package:final_project/login.dart';
+import 'package:final_project/widgets/main_screen.dart';
+import 'package:final_project/routes/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -130,7 +130,7 @@ class _SignUpState extends State<SignUp> {
 
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                    builder: (_) => mainScreen()));
+                                    builder: (_) => const MainScreen()));
                           } on FirebaseAuthException catch (e) {
                             var s = AlertDialog(
                               shape: RoundedRectangleBorder(
@@ -171,7 +171,7 @@ class _SignUpState extends State<SignUp> {
                           onPressed: () {
                             Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(builder: (_) {
-                              return loginScreen();
+                              return const LoginScreen();
                             }));
                           },
                           child: const Text("Login",

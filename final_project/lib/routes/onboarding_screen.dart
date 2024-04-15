@@ -1,10 +1,10 @@
-import 'package:final_project/SignUp.dart';
+import 'package:final_project/routes/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:page_view_dot_indicator/page_view_dot_indicator.dart';
 
-class onboardingScreen extends StatelessWidget {
-  var controller = PageController();
-  List pageContent = [
+class OnboardingScreen extends StatelessWidget {
+  final controller = PageController();
+  final List pageContent = [
     {
       "image": "assets/easy.jpg",
       "title": "EASY SHOPPING",
@@ -24,7 +24,7 @@ class onboardingScreen extends StatelessWidget {
     },
   ];
 
-  onboardingScreen({super.key});
+  OnboardingScreen({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +83,7 @@ class onboardingScreen extends StatelessWidget {
                     onPressed: () {
                       Navigator.of(ctx)
                           .pushReplacement(MaterialPageRoute(builder: (_) {
-                        return SignUp();
+                        return const SignUp();
                       }));
                     },
                     child: const Text(

@@ -1,7 +1,7 @@
-import 'package:final_project/Categories.dart';
+import 'package:final_project/routes/categories.dart';
 import 'package:flutter/material.dart';
-import 'package:final_project/display_products.dart';
-import 'package:final_project/userModel.dart';
+import 'package:final_project/widgets/display_products.dart';
+import 'package:final_project/models/user_model.dart';
 import 'package:final_project/firebase.dart';
 
 class Products extends StatefulWidget {
@@ -13,7 +13,7 @@ class Products extends StatefulWidget {
 
 class _ProductsState extends State<Products> {
   bool isLoading = true;
-  late userModel? u;
+  late UserModel? u;
   var women = [
     {"image": "assets/c1.jpg", "name": "Top 240", "price": "\$105"},
     {"image": "assets/c2.jpg", "name": "Dress 056", "price": "\$427"},
@@ -25,13 +25,13 @@ class _ProductsState extends State<Products> {
 
   @override
   void initState() {
-    firebase("Women").writeProducts(women);
+    Firebase("Women").writeProducts(women);
     get();
     super.initState();
   }
 
   get() async {
-    u = await firebase(Categories().getcat()).readProducts();
+    u = await Firebase(const Categories().getcat()).readProducts();
     setState(() {
       isLoading = false;
     });
@@ -44,7 +44,7 @@ class _ProductsState extends State<Products> {
           centerTitle: true,
           backgroundColor: const Color.fromARGB(255, 219, 174, 50),
           title: Text(
-            Categories().getcat(),
+            const Categories().getcat(),
             style: const TextStyle(fontSize: 25, color: Colors.white),
           )),
       body: isLoading

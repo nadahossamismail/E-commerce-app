@@ -1,8 +1,9 @@
-import 'package:final_project/products_in_category.dart';
+import 'package:final_project/routes/products_in_category.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-var categoryName;
+var categoryName = "";
 
 class Categories extends StatefulWidget {
   const Categories({super.key});

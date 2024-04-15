@@ -1,21 +1,23 @@
-import 'package:final_project/Account.dart';
-import 'package:final_project/Categories.dart';
-import 'package:final_project/homeScreen.dart';
-import 'package:final_project/login.dart';
+import 'package:final_project/routes/profile_screen.dart';
+import 'package:final_project/routes/categories.dart';
+import 'package:final_project/routes/home_screen.dart';
+import 'package:final_project/routes/login.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class mainScreen extends StatefulWidget {
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
   @override
-  State<mainScreen> createState() => _mainScreenState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _mainScreenState extends State<mainScreen> {
+class _MainScreenState extends State<MainScreen> {
   var currentTab = 0;
   bool notification = true;
-  var pages = [HomeScreen(), Categories(), Account()];
+  var pages = [const HomeScreen(), const Categories(), const ProfileScreen()];
   var pageTitle = ["FOR YOU", "Categories", "Account"];
 
   @override
@@ -88,7 +90,7 @@ class _mainScreenState extends State<mainScreen> {
                               makeToast("Sign out completed successfully");
                               Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
-                                      builder: (_) => loginScreen()));
+                                      builder: (_) => const LoginScreen()));
                             });
                           },
                           icon: const Icon(Icons.logout),

@@ -1,19 +1,19 @@
-import 'package:final_project/userModel.dart';
+import 'package:final_project/models/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class firebase {
+class Firebase {
   String categoryName;
 
-  firebase(this.categoryName);
+  Firebase(this.categoryName);
 
-  userModel user = userModel();
-  Future<userModel?> readProducts() async {
+  UserModel user = UserModel();
+  Future<UserModel?> readProducts() async {
     await FirebaseFirestore.instance
         .collection("Products")
         .doc(categoryName)
         .get()
         .then((value) {
-      user = userModel.fromJson(value.data()!);
+      user = UserModel.fromJson(value.data()!);
     });
     return user;
   }

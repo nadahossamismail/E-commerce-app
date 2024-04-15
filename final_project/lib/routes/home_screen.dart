@@ -1,6 +1,6 @@
 import 'package:final_project/firebase.dart';
-import 'package:final_project/display_products.dart';
-import 'package:final_project/userModel.dart';
+import 'package:final_project/widgets/display_products.dart';
+import 'package:final_project/models/user_model.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,9 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   bool isLoading = true;
   var sliderindex = 0;
-  late userModel? u;
+  late UserModel? u;
   get() async {
-    u = await firebase("Popular Products").readProducts();
+    u = await Firebase("Popular Products").readProducts();
     setState(() {
       isLoading = false;
     });

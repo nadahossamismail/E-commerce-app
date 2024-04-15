@@ -1,19 +1,21 @@
-import 'package:final_project/appInfo.dart';
-import 'package:final_project/developer.dart';
+import 'package:final_project/routes/app_info.dart';
+import 'package:final_project/routes/developer_info.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Account extends StatefulWidget {
+class ProfileScreen extends StatefulWidget {
+  const ProfileScreen({super.key});
+
   @override
-  State<Account> createState() => _AccountState();
+  State<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _AccountState extends State<Account> {
+class _ProfileScreenState extends State<ProfileScreen> {
   bool isLoading = true;
 
-  var userName;
-  var fisrtLetter;
-  var userEmail;
+  String? userName;
+  String? fisrtLetter;
+  String? userEmail;
   getUserInfo() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     userEmail = prefs.getString("email");
@@ -49,7 +51,7 @@ class _AccountState extends State<Account> {
                   radius: 35,
                   backgroundColor: Colors.black,
                   child: Text(
-                    fisrtLetter,
+                    fisrtLetter!,
                     style: const TextStyle(fontSize: 50, color: Colors.white),
                   ),
                 ),
@@ -57,14 +59,14 @@ class _AccountState extends State<Account> {
                   height: 10,
                 ),
                 Text(
-                  userName,
+                  userName!,
                   style: const TextStyle(fontSize: 20),
                 ),
                 const SizedBox(
                   height: 3,
                 ),
                 Text(
-                  userEmail,
+                  userEmail!,
                   style: const TextStyle(fontSize: 18, color: Colors.blue),
                 ),
                 const SizedBox(
@@ -83,8 +85,8 @@ class _AccountState extends State<Account> {
                       ),
                       IconButton(
                         icon: const Icon(Icons.arrow_forward_ios),
-                        onPressed: () => Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (_) => appInfo())),
+                        onPressed: () => Navigator.of(context).push(
+                            MaterialPageRoute(builder: (_) => const AppInfo())),
                       )
                     ],
                   ),
@@ -103,7 +105,8 @@ class _AccountState extends State<Account> {
                       IconButton(
                         icon: const Icon(Icons.arrow_forward_ios),
                         onPressed: () => Navigator.of(context).push(
-                            MaterialPageRoute(builder: (_) => developer())),
+                            MaterialPageRoute(
+                                builder: (_) => const DeveloperInfoScreen())),
                       )
                     ],
                   ),
